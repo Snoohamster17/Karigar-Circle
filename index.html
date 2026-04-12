@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karigar Circle | Continuity of Craft</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <nav class="site-nav">
+        <div class="logo">Karigar Circle</div>
+        <div class="menu-toggle">Menu</div>
+    </nav>
+
+    <section class="hero-section">
+        <canvas id="fluid-canvas"></canvas>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="line">Continuity</span>
+                <span class="line">Of Craft.</span>
+            </h1>
+            <p class="hero-subtitle">Reinterpreting traditional techniques for modern contexts.</p>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<section class="collaborations-section">
+    <div class="pin-container">
+        <div class="collab-panel">
+            <h2 class="collab-title">Reimagining Textiles</h2>
+            <p class="collab-desc">A co-creation between Kutch weavers and modern spatial designers.</p>
+        </div>
+        <div class="collab-panel dark">
+            <h2 class="collab-title">The Brass Cast</h2>
+            <p class="collab-desc">Traditional metalwork adapted for contemporary home environments.</p>
+        </div>
+        <div class="collab-panel">
+            <h2 class="collab-title">Natural Dyes</h2>
+            <p class="collab-desc">Exploring organic color systems with contemporary fashion labels.</p>
+        </div>
+    </div>
+</section>
+
+<section class="ecosystem-section">
+        <div class="counter-container">
+            <div class="counter-item">
+                <h2 class="counter-number" data-target="150">0</h2>
+                <span class="plus">+</span>
+                <p class="counter-label">Artisan Collaborators across regions</p>
+            </div>
+            <div class="counter-item">
+                <h2 class="counter-number" data-target="45">0</h2>
+                <span class="plus">+</span>
+                <p class="counter-label">Heritage techniques reimagined</p>
+            </div>
+            <div class="counter-item">
+                <h2 class="counter-number" data-target="12">0</h2>
+                <span class="plus">+</span>
+                <p class="counter-label">Cross-disciplinary collections</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pillars-section">
+        <div class="pillar-bg-reveal"></div> <div class="pillars-content">
+            <h3 class="section-heading">Our Approach</h3>
+            
+            <div class="pillar-row" data-image="url('https://images.unsplash.com/photo-1605371309259-2165b4c10609?q=80&w=2000&auto=format&fit=crop')">
+                <h2 class="pillar-title">Collaborative Creation</h2>
+                <p class="pillar-desc">Enabling co-creation between craft practitioners and creatives.</p>
+            </div>
+            
+            <div class="pillar-row" data-image="url('https://images.unsplash.com/photo-1584984647265-ce90d40232ee?q=80&w=2000&auto=format&fit=crop')">
+                <h2 class="pillar-title">Cultural Continuity</h2>
+                <p class="pillar-desc">Treating craft as a living, evolving practice rather than stagnation.</p>
+            </div>
+            
+            <div class="pillar-row" data-image="url('https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=2000&auto=format&fit=crop')">
+                <h2 class="pillar-title">Material Integrity</h2>
+                <p class="pillar-desc">Highlighting materials, techniques, and the beauty of imperfections.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="makers-section">
+        <div class="makers-container">
+            <h3 class="section-heading">Caretakers & Creators</h3>
+            
+            <div class="masonry-grid">
+                <div class="maker-card" data-id="jignesh">
+                    <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=1000&auto=format&fit=crop" alt="Jignesh Bhai">
+                    <div class="maker-info">
+                        <h4>Jignesh Bhai</h4>
+                        <span>Textile Artisan, Kutch</span>
+                    </div>
+                </div>
+
+                <div class="maker-card" data-id="aarav">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" alt="Aarav Mehta">
+                    <div class="maker-info">
+                        <h4>Aarav Mehta</h4>
+                        <span>Graphic Designer, Bengaluru</span>
+                    </div>
+                </div>
+                
+                <div class="maker-card" data-id="kavya">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop" alt="Kavya Shah">
+                    <div class="maker-info">
+                        <h4>Kavya Shah</h4>
+                        <span>Architect, Delhi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="drawer-overlay"></div>
+    <aside class="maker-drawer">
+        <button class="close-drawer">Close [X]</button>
+        <div class="drawer-content">
+            <img id="drawer-img" src="" alt="Maker Portrait">
+            <div class="drawer-text">
+                <h2 id="drawer-name">Name</h2>
+                <h4 id="drawer-role">Role</h4>
+                <div class="drawer-divider"></div>
+                <p id="drawer-mindset" class="quote">"Quote goes here"</p>
+                <p id="drawer-bio">Bio goes here.</p>
+            </div>
+        </div>
+    </aside>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

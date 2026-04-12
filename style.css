@@ -1,0 +1,413 @@
+/* style.css */
+:root {
+    /* Color Palette */
+    --bg-color: #E6E2D6; /* Warm, earthy tone from brand guide */
+    --text-primary: #1A1A1A;
+    --accent-red: #D9381E;
+    
+    /* Typography */
+    --font-primary: 'Beatrice Display', sans-serif;
+    --font-secondary: 'Neue Haas Grotesk', Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-secondary);
+    cursor: none; /* Hide default cursor */
+    overflow-x: hidden;
+}
+
+/* --- Custom Cursor --- */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* Class to trigger cursor expansion on hover states */
+.custom-cursor.expand {
+    width: 60px;
+    height: 60px;
+}
+
+/* --- Navigation --- */
+.site-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    z-index: 100;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+#fluid-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.8; /* Subtle background presence */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: clamp(4rem, 12vw, 12rem);
+    line-height: 0.9;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.hero-title .line {
+    display: block;
+    overflow: hidden; /* Crucial for GSAP text reveal */
+}
+
+.hero-subtitle {
+    margin-top: 3rem; /* Generous breathing room */
+    font-size: 1.5rem;
+    max-width: 500px;
+    line-height: 1.4;
+}
+/* --- Horizontal Scroll Section --- */
+.collaborations-section {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Hide the horizontal overflow */
+    background-color: var(--bg-color);
+}
+
+.pin-container {
+    display: flex;
+    width: 300vw; /* 3 panels = 300% width */
+    height: 100vh;
+}
+
+.collab-panel {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10vw;
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.collab-panel.dark {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+}
+
+.collab-title {
+    font-family: var(--font-primary);
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.collab-desc {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    max-width: 400px;
+}
+
+/* --- Ecosystem Counters Section --- */
+.ecosystem-section {
+    padding: 10vw 4rem;
+    background-color: var(--text-primary);
+    color: var(--bg-color); /* Inverted scheme for contrast */
+}
+
+.counter-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.counter-item {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 2rem;
+}
+
+.counter-number {
+    font-family: var(--font-primary);
+    font-size: clamp(4rem, 8vw, 10rem);
+    line-height: 0.8;
+}
+
+.plus {
+    font-size: clamp(2rem, 4vw, 5rem);
+    color: var(--accent-red);
+    margin-left: 0.5rem;
+}
+
+.counter-label {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    max-width: 250px;
+}
+
+/* --- Core Pillars Section --- */
+.pillars-section {
+    position: relative;
+    padding: 10vw 4rem;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.pillar-bg-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* Let clicks pass through */
+    z-index: 0;
+}
+
+.pillars-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4rem;
+}
+
+.pillar-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: none;
+    transition: transform 0.3s ease;
+}
+
+/* Slight indentation on hover */
+.pillar-row:hover {
+    transform: translateX(20px);
+}
+
+.pillar-title {
+    font-family: var(--font-primary);
+    font-size: clamp(2.5rem, 5vw, 6rem);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.pillar-desc {
+    max-width: 300px;
+    font-size: 1.2rem;
+    pointer-events: none;
+    text-align: right;
+}
+
+/* --- Makers Section (Masonry Grid) --- */
+.makers-section {
+    padding: 10vw 4rem;
+    background-color: var(--bg-color);
+}
+
+.makers-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.masonry-grid {
+    column-count: 3;
+    column-gap: 2rem;
+    margin-top: 4rem;
+}
+
+/* Responsive adjustments for the grid */
+@media (max-width: 1024px) { .masonry-grid { column-count: 2; } }
+@media (max-width: 768px) { .masonry-grid { column-count: 1; } }
+
+.maker-card {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    position: relative;
+    cursor: none; /* Let the custom cursor handle this */
+    overflow: hidden;
+}
+
+.maker-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.7s ease, filter 0.7s ease;
+    filter: grayscale(80%); /* Subtle desaturation by default */
+}
+
+.maker-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: var(--bg-color);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.maker-card:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.maker-card:hover .maker-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.maker-info h4 {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.maker-info span {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* --- Off-Canvas Drawer --- */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 900;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.drawer-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+    cursor: none; /* So the custom cursor shows a 'close' state if needed */
+}
+
+.maker-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 45vw; /* Almost half the screen */
+    min-width: 500px;
+    height: 100vh;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    padding: 4rem;
+    overflow-y: auto;
+    transform: translateX(100%); /* Hidden off-screen by default */
+    /* GSAP will handle the sliding animation */
+}
+
+.close-drawer {
+    background: none;
+    border: none;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    margin-bottom: 3rem;
+    display: inline-block;
+}
+
+.drawer-content img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 3rem;
+}
+
+#drawer-name {
+    font-family: var(--font-primary);
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+#drawer-role {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(0,0,0,0.6);
+}
+
+.drawer-divider {
+    height: 1px;
+    background-color: rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: var(--accent-red);
+}
+
+#drawer-bio {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
