@@ -188,15 +188,15 @@ document.addEventListener("DOMContentLoaded", () => {
             quote: `"This is my skill, but I want it to grow."`,
             bio: "Jignesh Bhai has practiced his craft for over 20 years. He has deep knowledge but limited exposure to design systems or urban markets. He is open to change, but wants his work to be respected, not altered blindly. He seeks fair and respectful collaboration opportunities and visibility beyond local markets."
         },
-        aarav: {
-            name: "Aarav Mehta",
+        pranav: {
+            name: "Pranav Narayan",
             role: "Graphic Designer, Bengaluru",
             quote: `"Design needs context, not just style."`,
-            bio: "Aarav works at a contemporary design studio and is constantly exploring ways to make his work feel more culturally rooted and original. He is tired of global aesthetics and wants deeper meaning in his practice. He looks to traditional craft as a source of depth, process, and authenticity."
+            bio: "Pranav works at a contemporary design studio and is constantly exploring ways to make his work feel more culturally rooted and original. He is tired of global aesthetics and wants deeper meaning in his practice. He looks to traditional craft as a source of depth, process, and authenticity."
         },
-        kavya: {
-            name: "Kavya Shah",
-            role: "Architect, Delhi",
+        Moopy: {
+            name: "Moopy",
+            role: "Architect, Bengaluru",
             quote: `"Everything I own should mean something."`,
             bio: "Kavya values well-designed spaces and objects. She buys less, but invests in pieces that have story, quality, and longevity. She sees craft as part of a refined lifestyle, not as décor, and values transparency in process and materials."
         }
